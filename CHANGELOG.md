@@ -1,15 +1,51 @@
-# Changelog - Änderungsverlauf deines Projekts
+# The Tutorial Changelog
 
-Dieser Changelog ist in umgekehrter Reihenfolge sortiert, die neuesten Änderungen stehen also oben und die älteren darunter, so dass man sofort sieht, was als nächstes gemacht werden muss.
+This changelog is ordered in reverse chronological order, meaning that the last changes made will always be on top of the file, so that readers will not have to scroll all the way down with each change.
 
-## Stage 0(master): Boilerplate
+## Stage 4: Mongoose && Models && Seeding
 
-In diesem Branch ist ein Grundaufbau, der so für fast alle Express-Server gebraucht wird, die du machen wirst.
-Der Grundaufbau besteht aus:
+In this branch we introduced Mongoose and we created our first models. We then created our first models.
 
-- Dateien, die vom [`npx express-generator`](https://expressjs.com/en/starter/generator.html) mit den Optionen `--no-view` und `--git` erzeugt wurden, etwas abgeändert und aktualisiert.
+    - We established our database connection in app.js
+    - We create our models for our records, users and orders.
+    - We set up a virtual for our user model.
+    - We wrote a script that will seed the database with some fake users if run.
+    - We wrote a script that will purge users if run.
 
-### Änderungen an den `express-generator`-Dateien:
+## Stage 3: Routing error and handling
 
-- `routes/index.js` und `routes/users.js` nutzen `const`
-- `app.js` nutzt `const`. Es wurden Kommentare hinzugefügt um den Code besser lesbar zu machen.
+In this branch we expanded our records endpoints and we create new ones for users and orders
+
+    - We created DELETE and PUT for the records model
+    - We created GET, POST,`PUT and DELETE for our users model
+    - We created GET, POST,`PUT and DELETE for our orders model
+    - We wrote a middleware function that performs basis error handling.
+
+## Stage 2: Middleware and CORS
+
+In this branch we created our own middleware functions
+
+    - We created a middleware directory
+    - We set up a middleware function that will add headers to each request
+    - We incorporated it in our app.
+
+## Stage 1: Mock database and controllers
+
+In this branch we have set up our initial structure for our API
+
+    - We created two simple routes GET and POST for our records data
+    - We set up `lowdb` in order to store our data in a file
+    - We then updated our routes in order to use `lowdb`
+    - We created controllers for our routes in a different directory
+
+## Stage 0: Boilerplate
+
+This branch contains a boilerplate for almost every express server you are going to create.  
+This boilerplate consists of:
+
+- Files create by [`npx express-generator`](https://expressjs.com/en/starter/generator.html), using the `--no-view` and `--git` flags, slightly modified and modernised.
+
+### Changes made to `express-generator` files:
+
+- `routes/index.js` and `routes/users.js` have been updated to use `const`
+- `app.js` was also updated to use `const`. In addition, comments were added to seperate the file to smaller more easily readable chunks.
