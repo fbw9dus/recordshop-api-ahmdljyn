@@ -11,7 +11,7 @@ const OrderSchema = new Schema({
   record: {
     ref: "Record",
    // type: Number,
-   type: mongoose.Schema.Types.ObjectId, ref: 'Record',
+   type: mongoose.Schema.Types.ObjectId, //ref: 'Record',:
     //required: true
   }
 });

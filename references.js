@@ -1,3 +1,4 @@
+//beispiel für 3. aufgabe des task 07
 const mongoose = require('mongoose')
 const { Schema } = mongoose
 
