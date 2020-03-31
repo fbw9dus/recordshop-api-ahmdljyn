@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-
-const adress = new Schema({
+const address = new Schema({
   street:{
     type: String,
     required: true
@@ -10,8 +9,7 @@ const adress = new Schema({
   city:{
     type: String,
     required: true
-  }
-})
+  }})
 
 const UserSchema = new Schema(
   {
@@ -23,8 +21,9 @@ const UserSchema = new Schema(
       type: String,
       required: true
     },
-    address: adress,
-
+    
+    address: address,
+    
     email: {
       type: String,
       required: true
@@ -33,9 +32,8 @@ const UserSchema = new Schema(
       type: String,
       required: true
     }
-    },
-  
-  { 
+  },
+  {
     toObject: {
       virtuals: true
     },
@@ -44,7 +42,6 @@ const UserSchema = new Schema(
     }
   }
 );
-
 
 UserSchema.virtual("fullName").get(function() {
   return `${this.firstName} ${this.lastName}`;
