@@ -1,7 +1,9 @@
+//bei spiel node js 
 const validatorjs = require('validator')
+const myEmail = "Fatben@googlemail.com"
+const sanitizedEmail  = validatorjs.normalizeEmail(myEmail)
 
-const myEmail = "tomiSlavDumancic@hotmail.com"
+const name = " Fatimaz  "
 
-const sanitizedEmail = validatorjs.normalizeEmail(myEmail)
-
-console.log(sanitizedEmail)
+const sanitizedName = validatotjs.trim(name)
+console.log(sanitizedName)
