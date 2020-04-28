@@ -51,8 +51,8 @@ const Owner = mongoose.model('Owner', OwnerSchema)
     })
 
     // Lesen
-    const owner = await Owner.findById(max.id).populate('car')
+    const owner = await Owner.findById(max.id).populate('car', '-__v -_id')
     console.log(owner)
-    
+
 })()
 
